@@ -22,7 +22,7 @@ class SurfshopTest(unittest.TestCase):
     def test_shoppingCart_Size(self):
       self.assertRaises(surfshop.TooManyBoardsError, self.cart.add_surfboards, 5)
 
-    @unittest.expectedFailure
+   # @unittest.expectedFailure
     def test_apply_locals_discount(self):
       self.assertTrue(self.cart.locals_discount)
 
