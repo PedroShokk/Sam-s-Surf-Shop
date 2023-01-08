@@ -14,16 +14,17 @@ class SurfshopTest(unittest.TestCase):
 
     def test_add_surfboards_2(self):
       for i in range(2,5):
-        with unittest.subTest(i=i):
+        with self.subTest(i=i):
           self.assertEqual(self.cart.add_surfboards(i), f'Successfully added {i} surfboards to cart!')
           self.cart = surfshop.ShoppingCart()
 
-    @unittest.skip
+    #@unittest.skip
     def test_shoppingCart_Size(self):
       self.assertRaises(surfshop.TooManyBoardsError, self.cart.add_surfboards, 5)
 
-   # @unittest.expectedFailure
+    #@unittest.expectedFailure
     def test_apply_locals_discount(self):
+      self.cart.apply_locals_discount()
       self.assertTrue(self.cart.locals_discount)
 
 
